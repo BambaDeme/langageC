@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include <string.h>
 
 // fonction qui calcule la longueur d'une chaine
 int StrLength(char* str){
@@ -30,25 +31,28 @@ int StrComapre(char* str, char* str1){
 }
 //fonction qui concaténe deux chaines
 void StrConcate(char* str, char* str1){
-	int n  = StrLength(str) + StrLength(str1) +1;
+	int n  = StrLength(str) + StrLength(str1);
 	char newChaine[n];
 	
 	int i = 0,j=0,k=0;
-	while(j<StrLength(str1)){
-		*(newChaine+i) = *(str1+j);
+	while(j<StrLength(str)){
+		*(newChaine+j) = *(str+j);
 		j++;
-		i++;
+		//i++;
 	}
-	/*while(k<StrLength(str1)){
-		*(newChaine+i) = *(str1+k);
+	while(k<StrLength(str1)){
+		*(newChaine+j) = *(str1+k);
 		k++;
-		i++;
-	}*/
-	printf("chaine = %d\n",StrLength(newChaine) );
-	for (int i = 0; i < StrLength(newChaine); ++i)
+		j++;
+		//i++;
+	}
+	//printf("\n%d\n",n);
+	//printf("chaine = %d\n",StrLength(newChaine));
+	printf(" \"%s\" + \"%s\" = %s\n",str,str1,newChaine);
+	/*for (int i = 0; i <strlen(newChaine); ++i)
 	{
 		printf("%c\n",newChaine[i]);
-	}
+	}*/
 	//printf("\n%s\n",newChaine);
 	//return newChaine;
 }
